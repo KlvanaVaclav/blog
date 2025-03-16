@@ -17,7 +17,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "clean-css": "rimraf src/styles/css/*",
+    "sass": "npm run clean-css && sass src/styles/scss/main.scss:src/styles/css/main.css --no-source-map --style=compressed"
   },
   "eslintConfig": {
     "extends": [
