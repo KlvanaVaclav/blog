@@ -1,9 +1,9 @@
 import React from "react";
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Button, Box } from "@mui/material";
 
-const BlogCard = ({ title, content, image }) => {
+const BlogCard = ({ title, content, image, children }) => {
     return (
-        <Card sx={{ maxWidth: 400 }}>
+        <Card sx={{ maxWidth: 400, marginBottom: 2 }}>
             {/* Render image only if provided */}
             {image && (
                 <CardMedia
@@ -18,7 +18,13 @@ const BlogCard = ({ title, content, image }) => {
                 <Typography variant="h6" gutterBottom>
                     {title}
                 </Typography>
-                <Typography variant="body2">{content}</Typography>
+                <Typography variant="body2" paragraph>
+                    {content}
+                </Typography>
+                {/* Render children (buttons) if provided */}
+                <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                    {children}
+                </Box>
             </CardContent>
         </Card>
     );

@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Dialog, DialogActions, DialogContent, DialogTitle, TextField, Button } from "@mui/material";
+import { useAuth } from "../context/AuthContext"; // Import useAuth to access login state
 
-const LoginModal = ({ open, onClose, onLogin }) => {
+const LoginModal = ({ open, onClose }) => {
+    const { login } = useAuth(); // Access login method from context
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -14,7 +16,8 @@ const LoginModal = ({ open, onClose, onLogin }) => {
         const correctPassword = "p@55";
 
         if (username === correctUsername && password === correctPassword) {
-            onLogin(); // If credentials are correct, log in the user
+            login(); // Call login from context when credentials are correct
+            onClose(); // Close the modal after login
         } else {
             setError("Invalid username or password");
         }
