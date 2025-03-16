@@ -1,5 +1,38 @@
-$primary: #3498db;
-$secondary: #2ecc71;
-$accent: #e74c3c;
-$background: #f5f5f5;
-$text: #333;
+// _variables.scss
+
+// Backgrounds
+$bg-primary: #fef9ee;
+$bg-secondary: #fdf2d7;
+$bg-card: #fbe2ad;
+
+// Borders & Dividers
+$border-light: #f8cf84;
+
+// Accent & Interactions
+$accent: #f3ab44;
+$button-primary: #f0911f;
+$button-hover: #e17715;
+$button-active: #bb5b13;
+
+// Text & Icons
+$text-primary: #783c16;
+$text-secondary: #944818;
+$text-strong: #411d09;
+
+// ✅ Generate CSS Variables from SCSS Variables
+:root {
+    --bg-primary: #{$bg-primary};
+    --bg-secondary: #{$bg-secondary};
+    --bg-card: #{$bg-card};
+
+    --border-light: #{$border-light};
+
+    --accent: #{$accent};
+    --button-primary: #{$button-primary};
+    --button-hover: #{$button-hover};
+    --button-active: #{$button-active};
+
+    --text-primary: #{$text-primary};
+    --text-secondary: #{$text-secondary};
+    --text-strong: #{$text-strong};
+}

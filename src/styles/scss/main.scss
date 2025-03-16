@@ -1,15 +1,25 @@
 @use "App";
 @use "index";
 @use "variables" as *;
-@use "sass:color"; // 👈 Required for `color.adjust`
+@use "sass:color"; // Required for `color.adjust`
+
+html,
+body,
+#root {
+    height: 100%; // Ensures full viewport height
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
 
 body {
-    background-color: $background;
-    color: $text;
+    background-color: $bg-primary; // Primary background color
+    color: $text-primary; // Main text color
 }
 
 button {
-    background-color: $primary;
+    background-color: $button-primary; // Primary button color
     color: white;
     border: none;
     padding: 10px 15px;
@@ -17,6 +27,6 @@ button {
     transition: background 0.3s;
 
     &:hover {
-        background-color: color.scale($primary, $lightness: -10%);
+        background-color: color.scale($button-primary, $lightness: -10%); // Darken on hover
     }
 }
