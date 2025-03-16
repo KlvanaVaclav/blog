@@ -1,2 +1,22 @@
 @use "App";
 @use "index";
+@use "variables" as *;
+@use "sass:color"; // 👈 Required for `color.adjust`
+
+body {
+    background-color: $background;
+    color: $text;
+}
+
+button {
+    background-color: $primary;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+        background-color: color.scale($primary, $lightness: -10%);
+    }
+}
