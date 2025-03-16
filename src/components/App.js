@@ -8,11 +8,10 @@ import BlogPost from '../pages/BlogPost';
 function App() {
   return (
     <div className='App'>
-      <Router>
+      <Router basename="/blog">
         <Header />
         <div className="main-content">
           <Routes>
-            <Route path="/home" element={<h1>Home Page</h1>} />
             <Route path="/about" element={<About />} />
             <Route path="/blogposts" element={<BlogPost />} />
           </Routes>
