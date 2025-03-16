@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardMedia, Typography, Button, Box } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Box } from "@mui/material"; // Removed the unused 'Button' import
 
 const BlogCard = ({ title, content, image, children }) => {
     return (
