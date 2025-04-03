@@ -2,7 +2,6 @@
 import React from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "../context/AuthContext"; // Make sure this import is correct
 import { BlogProvider } from '../context/BlogContext';
 import theme from "../themes/blog-theme";
 import Header from "./Header";
@@ -12,23 +11,21 @@ import BlogPost from "../pages/BlogPost";
 
 function App() {
   return (
-    <AuthProvider>
-      <BlogProvider>
-        <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Router basename="/blog">
-            <Header />
-            <div className="main-content">
-              <Routes>
-                <Route path="/about" element={<About />} />
-                <Route path="/blogposts" element={<BlogPost />} />
-              </Routes>
-            </div>
-            <Footer />
-          </Router>
-        </ThemeProvider>
-      </BlogProvider>
-    </AuthProvider>
+    <BlogProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Router basename="/blog">
+          <Header />
+          <div className="main-content">
+            <Routes>
+              <Route path="/about" element={<About />} />
+              <Route path="/blogposts" element={<BlogPost />} />
+            </Routes>
+          </div>
+          <Footer />
+        </Router>
+      </ThemeProvider>
+    </BlogProvider>
   );
 }
 
